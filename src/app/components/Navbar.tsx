@@ -6,11 +6,11 @@ import { useState } from 'react'
 const NavMenuItems: Array<{
     id: string;
     title: string;
-    href?: string;
+    href: string;
   }> = [
-    { id: 'portfolio', title: 'Portfolio', href: `/portfolio` },
-    { id: 'blog', title: 'Blogs', href: `/blogs` },
-    { id: 'contact', title: 'Contact', href: `/contact` }
+    { id: 'portfolio', title: 'Portfolio', href: '/portfolio' },
+    { id: 'blog', title: 'Blogs', href: '/blogs' },
+    { id: 'contact', title: 'Contact', href: '/contact' }
 ];
 
 const Navbar = () => {
