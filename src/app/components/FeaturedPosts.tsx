@@ -17,7 +17,7 @@ export default function FeaturedPosts() {
             <div key={post.id} className="bg-white p-6 rounded-lg shadow-md">
                 <h3 className="text-xl font-semibold mb-2">{post.title}</h3>
                 <p className="text-gray-600">{post.excerpt}</p>
-                <Link href={`/blog/${post.id}`} className="text-blue-500 hover:underline mt-2 inline-block">
+                <Link href={`/blogs/${post.id}`} className="text-blue-500 hover:underline mt-2 inline-block">
                 Read more
                 </Link>
             </div>

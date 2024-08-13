@@ -1,9 +1,9 @@
 import Link from 'next/link'
 import Pagination from '../components/Pagination'
 
-const POSTS_PER_PAGE = 10;
+const POSTS_PER_PAGE = 5;
 
-async function getBlogPosts() {
+async function getBlogPosts() : Promise<BlogPost[]> {
   const res = await fetch('http://localhost:3000/api/blogs', { cache: 'no-store' });
   if (!res.ok) {
     throw new Error('Failed to fetch blog posts');
@@ -12,7 +12,7 @@ async function getBlogPosts() {
 }
 
 export default async function BlogListing({ searchParams }: { searchParams: { page: string } }) {
-  const allPosts = await getBlogPosts();
+  const allPosts : BlogPost[] = await getBlogPosts();
   const currentPage = parseInt(searchParams.page) || 1;
   const indexOfLastPost = currentPage * POSTS_PER_PAGE;
   const indexOfFirstPost = indexOfLastPost - POSTS_PER_PAGE;
@@ -26,7 +26,7 @@ export default async function BlogListing({ searchParams }: { searchParams: { pa
         {currentPosts.map((post) => (
           <div key={post.id} className="bg-white p-6 rounded-lg shadow-md">
             <h2 className="text-xl font-semibold mb-2">
-              <Link href={`/blog/${post.id}`} className="text-blue-600 hover:underline">
+              <Link href={`/blogs/${post.id}`} className="text-blue-600 hover:underline">
                 {post.title}
               </Link>
             </h2>

@@ -18,7 +18,7 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages }) => {
         {pageNumbers.map((number) => (
           <li key={number}>
             <Link
-              href={`/blog?page=${number}`}
+              href={`/blogs?page=${number}`}
               className={`px-3 py-1 rounded-md ${
                 currentPage === number
                   ? 'bg-blue-500 text-white'

@@ -29,6 +29,36 @@
         "title": "The Power of TypeScript",
         "excerpt": "Explore the benefits of using TypeScript in your projects.",
         "date": "2024-07-25"
+      },
+      {
+        "id": 6,
+        "title": "Islam as a way of life",
+        "excerpt": "Learn the basics of Next.js and start building awesome apps.",
+        "date": "2024-08-01"
+      },
+      {
+        "id": 7,
+        "title": "Mastering Boostrstrap CSS",
+        "excerpt": "Discover how to create beautiful, responsive designs with Tailwind CSS.",
+        "date": "2024-07-28"
+      },
+      {
+        "id": 8,
+        "title": "The Power of Knowledge",
+        "excerpt": "Explore the benefits of using TypeScript in your projects.",
+        "date": "2024-07-25"
+      },
+      {
+        "id": 9,
+        "title": "Learning ReactJs",
+        "excerpt": "Explore the benefits of using TypeScript in your projects.",
+        "date": "2024-07-25"
+      },
+      {
+        "id": 10,
+        "title": "How JS works behind the scene",
+        "excerpt": "Explore the benefits of using TypeScript in your projects.",
+        "date": "2024-07-25"
       }
     ]
   }
