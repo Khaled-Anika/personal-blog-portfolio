@@ -8,7 +8,7 @@ export default function Home() {
       <h1 className="text-4xl font-bold mb-8 text-center">Welcome to My Blog</h1>
       <FeaturedPosts />
       <div className="text-center mb-12">
-        <Link href="/blog" className="inline-block bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition-colors">
+        <Link href="/blogs" className="inline-block bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition-colors">
           See all posts
         </Link>
       </div>

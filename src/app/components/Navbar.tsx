@@ -29,7 +29,7 @@ const Navbar = () => {
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
                 {NavMenuItems.map((item) => (
-                    <Link href={item.href} className="text-gray-600 hover:text-gray-900">{item.title}</Link>
+                    <Link key={item.id} href={item.href} className="text-gray-600 hover:text-gray-900">{item.title}</Link>
                 ))}
             </div>
           </div>
