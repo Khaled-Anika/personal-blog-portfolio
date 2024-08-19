@@ -1,6 +1,7 @@
-import { getPosts } from "@/app/lib/services";
+import { getBlogPost, getPosts } from "@/app/lib/services";
 
 export async function generateStaticParams() {
+  // To generate the static paths at build time
   const posts = await getPosts();
   
   return posts.map((post) => ({
@@ -9,8 +10,10 @@ export async function generateStaticParams() {
 }
 
 export default async function BlogPost({ params }: { params: { id: string } }) {
-  const posts = await getPosts();
-  const post = posts.find(p => p.id.toString() === params.id);
+  // const posts = await getPosts();
+  // const post = posts.find(p => p.id.toString() === params.id.toString());
+  const post = await getBlogPost(params.id);
+
 
   if (!post) {
     return <div>Post not found</div>;

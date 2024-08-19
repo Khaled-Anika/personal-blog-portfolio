@@ -4,14 +4,14 @@ import { getPosts } from '../lib/services';
 
 const POSTS_PER_PAGE = 5;
 
-export async function generateStaticParams() {
-  const posts = await getPosts();
-  const totalPages = Math.ceil(posts.length / POSTS_PER_PAGE);
+// export async function generateStaticParams() {
+//   const posts = await getPosts();
+//   const totalPages = Math.ceil(posts.length / POSTS_PER_PAGE);
 
-  return Array.from({length: totalPages}, (item, i) => ({
-    page: (i+1).toString()
-  }));
-}
+//   return Array.from({length: totalPages}, (item, i) => ({
+//     page: (i+1).toString()
+//   }));
+// }
 
 export default async function BlogListing({ searchParams }: { searchParams: { page: string } }) {
   const allPosts : BlogPost[] = await getPosts();
