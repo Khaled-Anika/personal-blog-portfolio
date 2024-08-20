@@ -1,7 +1,9 @@
 'use client'
 
-import Link from 'next/link'
-import { useState } from 'react'
+import Link from 'next/link';
+import { useState } from 'react';
+import Image from 'next/image';
+import logo from '/public/logo.png';
 
 const NavMenuItems: Array<{
     id: string;
@@ -22,7 +24,19 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
             <Link href="/" className="text-xl font-bold">
-              Anika
+              <Image
+                className='rounded-full'
+                src={logo} 
+                width="50" 
+                height="50" 
+                alt="logo" 
+                quality={100}
+                placeholder='blur'
+                // layout='responsive'
+                // sizes='(min-width: 860px) 24vw,
+                // (min-width: 320px) 45vw,
+                // 30vw'
+              />
             </Link>
           </div>
           <div className="hidden md:block">
