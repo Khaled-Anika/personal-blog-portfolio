@@ -1,11 +1,12 @@
 import Link from 'next/link'
 
 interface PaginationProps {
-  currentPage: number
-  totalPages: number
+  currentPage: number;
+  totalPages: number;
+  pageType: string;
 }
 
-const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages }) => {
+const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, pageType }) => {
   const pageNumbers = []
 
   for (let i = 1; i <= totalPages; i++) {
@@ -18,7 +19,7 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages }) => {
         {pageNumbers.map((number) => (
           <li key={number}>
             <Link
-              href={`/blogs?page=${number}`}
+              href={`/${pageType}?page=${number}`}
               className={`px-3 py-1 rounded-md ${
                 currentPage === number
                   ? 'bg-blue-500 text-white'
