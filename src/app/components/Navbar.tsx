@@ -12,6 +12,7 @@ const NavMenuItems: Array<{
   }> = [
     { id: 'portfolio', title: 'Portfolio', href: '/portfolio' },
     { id: 'blog', title: 'Blogs', href: '/blogs' },
+    { id: 'post', title: 'Posts', href: '/posts' },
     { id: 'contact', title: 'Contact', href: '/contact' }
 ];
 
