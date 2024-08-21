@@ -3,3 +3,6 @@
 /.next/
 
 .env*
+
+# db files
+*.db
