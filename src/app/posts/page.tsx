@@ -1,7 +1,6 @@
 import Link from "next/link";
 import prisma from "../lib/db";
 import { createPost } from "@/actions/actions";
-import { revalidatePath } from "next/cache";
 
 // This will run only on server and the render result from return() will be sent to client
 export default async function Posts() {
@@ -11,8 +10,6 @@ export default async function Posts() {
     },
   });
   const postsCount = await prisma.post.count();
-
-  revalidatePath("/posts");
 
   return (
     <div className="container mx-auto px-4 py-8">

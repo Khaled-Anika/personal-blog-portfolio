@@ -1,6 +1,7 @@
 "use server"
 
 import prisma from "@/app/lib/db";
+import { revalidatePath } from "next/cache";
 
 export async function createPost(formData: FormData) {
     const title = formData.get("title") as string;
@@ -20,4 +21,6 @@ export async function createPost(formData: FormData) {
             content: formData.get("content") as string
         }
     });
+
+    revalidatePath("/posts");
 };
