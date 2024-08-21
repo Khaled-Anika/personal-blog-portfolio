@@ -11,3 +11,11 @@ interface ContactData {
     email: string;
     message: string;
 }
+
+interface Project {
+    id: number;
+    title: string;
+    description: string;
+    imageSrc: string;
+    imageAlt: string;
+}

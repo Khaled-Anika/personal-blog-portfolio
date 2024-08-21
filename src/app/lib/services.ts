@@ -35,3 +35,12 @@ export async function postContactData(data: ContactData) {
     }
     return res.json();
 }
+
+export async function getPortfolioProjects(): Promise<Project[]> {
+    const res = await fetch('http://localhost:3000/api/portfolio', { next: { revalidate: 3600 } });
+
+    if (!res.ok) {
+        throw new Error('Failed to fetch portfolio projects');
+    }
+    return res.json();
+};

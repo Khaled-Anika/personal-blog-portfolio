@@ -37,7 +37,7 @@ export default async function BlogListing({ searchParams }: { searchParams: { pa
           </div>
         ))}
       </div>
-      <Pagination currentPage={currentPage} totalPages={totalPages} />
+      <Pagination currentPage={currentPage} totalPages={totalPages} pageType={'blogs'} />
     </div>
   )
 }

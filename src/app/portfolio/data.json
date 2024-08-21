@@ -1,0 +1,88 @@
+{
+    "projects": [
+        {
+          "id": 1,
+          "title": "E-commerce Platform",
+          "description": "A full-stack e-commerce solution built with Next.js and Stripe.",
+          "imageSrc": "/projects/ecommerce.webp",
+          "imageAlt": "E-commerce platform screenshot"
+        },
+        {
+          "id": 2,
+          "title": "Task Management App",
+          "description": "A React-based task management application with drag-and-drop functionality.",
+          "imageSrc": "/projects/data-management.webp",
+          "imageAlt": "Task management app interface"
+        },
+        {
+          "id": 3,
+          "title": "Weather Dashboard",
+          "description": "A weather dashboard that integrates with a third-party API to display real-time weather data.",
+          "imageSrc": "/projects/weather.webp",
+          "imageAlt": "Weather dashboard displaying forecast"
+        },
+        {
+          "id": 4,
+          "title": "E-commerce Platform",
+          "description": "A full-stack e-commerce solution built with Next.js and Stripe.",
+          "imageSrc": "/projects/ecommerce.webp",
+          "imageAlt": "E-commerce platform screenshot"
+        },
+        {
+          "id": 5,
+          "title": "Task Management App",
+          "description": "A React-based task management application with drag-and-drop functionality.",
+          "imageSrc": "/projects/data-management.webp",
+          "imageAlt": "Task management app interface"
+        },
+        {
+          "id": 6,
+          "title": "Weather Dashboard",
+          "description": "A weather dashboard that integrates with a third-party API to display real-time weather data.",
+          "imageSrc": "/projects/weather.webp",
+          "imageAlt": "Weather dashboard displaying forecast"
+        },
+        {
+          "id": 7,
+          "title": "E-commerce Platform",
+          "description": "A full-stack e-commerce solution built with Next.js and Stripe.",
+          "imageSrc": "/projects/ecommerce.webp",
+          "imageAlt": "E-commerce platform screenshot"
+        },
+        {
+          "id": 8,
+          "title": "Task Management App",
+          "description": "A React-based task management application with drag-and-drop functionality.",
+          "imageSrc": "/projects/data-management.webp",
+          "imageAlt": "Task management app interface"
+        },
+        {
+          "id": 9,
+          "title": "Weather Dashboard",
+          "description": "A weather dashboard that integrates with a third-party API to display real-time weather data.",
+          "imageSrc": "/projects/weather.webp",
+          "imageAlt": "Weather dashboard displaying forecast"
+        },
+        {
+          "id": 10,
+          "title": "E-commerce Platform",
+          "description": "A full-stack e-commerce solution built with Next.js and Stripe.",
+          "imageSrc": "/projects/ecommerce.webp",
+          "imageAlt": "E-commerce platform screenshot"
+        },
+        {
+          "id": 11,
+          "title": "Task Management App",
+          "description": "A React-based task management application with drag-and-drop functionality.",
+          "imageSrc": "/projects/data-management.webp",
+          "imageAlt": "Task management app interface"
+        },
+        {
+          "id": 12,
+          "title": "Weather Dashboard",
+          "description": "A weather dashboard that integrates with a third-party API to display real-time weather data.",
+          "imageSrc": "/projects/weather.webp",
+          "imageAlt": "Weather dashboard displaying forecast"
+        }
+    ]
+}
