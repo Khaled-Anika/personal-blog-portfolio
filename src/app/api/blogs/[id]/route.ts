@@ -14,13 +14,12 @@ import { NextResponse } from 'next/server';
 import { blogs } from '../../../blogs/data.json';
 
 export async function GET(request: Request, { params }: { params: { id: string } }) {
-
     const post = blogs.find((p: BlogPost) => p.id.toString() === params.id);
 
     if (!post) {
         return new NextResponse(null, { status: 404 });
     }
-    return NextResponse.json(blogs);
+    return NextResponse.json(post);
 }
 
 export const revalidate = 3600; // Revalidate every hour
