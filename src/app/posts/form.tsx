@@ -2,14 +2,23 @@
 
 import { createPost } from "@/actions/actions";
 import { useRef } from "react";
+import { useFormStatus } from "react-dom";
 
 export default function Form() {
   const ref = useRef<HTMLFormElement>(null);
+  const { pending } = useFormStatus();
+
   return (
     <form
       ref={ref}
       action={async (formData) => {
         ref.current?.reset();
+
+        // Simple example of error handling
+        // const { error } = await createPost(formData);
+        // if (error) {
+        //   alert(error.message);
+        // }
         await createPost(formData);
       }}
       className="space-y-4 mb-8 bg-slate-200 rounded-lg shadow-md p-4"
@@ -38,7 +47,7 @@ export default function Form() {
         type="submit"
         className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 disabled:bg-blue-300"
       >
-        Create Post
+        {pending ? "Adding post..." : "Add"}
       </button>
     </form>
   );
