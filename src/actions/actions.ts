@@ -3,6 +3,7 @@
 import prisma from "@/app/lib/db";
 import { revalidatePath } from "next/cache";
 
+
 export async function createPost(formData: FormData) {
     const title = formData.get("title") as string;
     let slug = title.replace(/\s+/g, "-").toLowerCase();
@@ -24,3 +25,25 @@ export async function createPost(formData: FormData) {
 
     revalidatePath("/posts");
 };
+
+export async function editPost(formData: FormData, id: string) {
+    const title = formData.get("title") as string;
+    let slug = title.replace(/\s+/g, "-").toLowerCase();
+
+    await prisma.post.update({
+        where: { id },
+        data: {
+            title,
+            slug,
+            content: formData.get("content") as string
+        }
+    });
+
+    revalidatePath("/posts");
+};
+
+export async function deletePost(id: string) {
+    await prisma.post.delete({where: { id }});
+
+    revalidatePath("/posts");
+}
