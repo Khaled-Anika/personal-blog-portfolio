@@ -2,11 +2,11 @@
 
 import { createPost } from "@/actions/actions";
 import { useRef } from "react";
-import { useFormStatus } from "react-dom";
+import Button from "./button";
+import { rejects } from "assert";
 
 export default function Form() {
   const ref = useRef<HTMLFormElement>(null);
-  const { pending } = useFormStatus();
 
   return (
     <form
@@ -19,6 +19,7 @@ export default function Form() {
         // if (error) {
         //   alert(error.message);
         // }
+        await new Promise((resolve) => setTimeout(resolve, 2000));
         await createPost(formData);
       }}
       className="space-y-4 mb-8 bg-slate-200 rounded-lg shadow-md p-4"
@@ -43,12 +44,7 @@ export default function Form() {
           className="w-full px-3 py-2 border rounded"
         />
       </div>
-      <button
-        type="submit"
-        className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 disabled:bg-blue-300"
-      >
-        {pending ? "Adding post..." : "Add"}
-      </button>
+      <Button />
     </form>
   );
 }
