@@ -1,5 +1,3 @@
-"use client";
-
 import PostDetails from "@/app/components/PostDetails";
 import { getPosts } from "@/app/lib/services";
 

@@ -14,11 +14,8 @@ const PostDetails: React.FC<BlogPostProps> = ({ id }) => {
     getBlogPost(id)
       .then((data) => {
         setPost(data);
-        console.log("async data", post);
       })
-      .catch((error) => {
-        console.error("Error fetching blog posts:", error);
-      });
+      .catch((error) => {});
   }, []);
 
   if (!post) {

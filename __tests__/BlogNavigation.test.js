@@ -14,12 +14,6 @@ global.fetch = jest.fn(() =>
   })
 );
 
-// jest.mock('next/navigation', () => ({
-//   useRouter: () => ({
-//     push: jest.fn(),
-//   }),
-// }));
-
 describe('Blog Navigation', () => {
   it('displays blog posts and allows navigation to individual post', async () => {
     const user = userEvent.setup()
@@ -43,4 +37,10 @@ describe('Blog Navigation', () => {
     // Check if the blog post title is displayed
     expect(await screen.findByText('Getting Started with Next.js')).toBeInTheDocument()
   })
-})
+});
+
+
+// To clear or reset mocks between tests
+// afterEach(() => {
+//   jest.clearAllMocks();
+// });
