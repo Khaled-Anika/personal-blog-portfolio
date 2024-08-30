@@ -1,6 +1,9 @@
-import Link from 'next/link'
-import Pagination from '../components/Pagination'
-import { getPosts } from '../lib/services';
+"use client";
+
+import Link from "next/link";
+import Pagination from "../components/Pagination";
+import { getPosts } from "../lib/services";
+import { useEffect, useState } from "react";
 
 const POSTS_PER_PAGE = 5;
 
@@ -13,13 +16,29 @@ const POSTS_PER_PAGE = 5;
 //   }));
 // }
 
-export default async function BlogListing({ searchParams }: { searchParams: { page: string } }) {
-  const allPosts : BlogPost[] = await getPosts();
+export default function BlogListing({
+  searchParams,
+}: {
+  searchParams: { page: string };
+}) {
+  // let allPosts: BlogPost[] = [];
+  const [allPosts, setAllPosts] = useState<BlogPost[]>([]);
   const currentPage = parseInt(searchParams.page) || 1;
   const indexOfLastPost = currentPage * POSTS_PER_PAGE;
   const indexOfFirstPost = indexOfLastPost - POSTS_PER_PAGE;
   const currentPosts = allPosts.slice(indexOfFirstPost, indexOfLastPost);
   const totalPages = Math.ceil(allPosts.length / POSTS_PER_PAGE);
+
+  useEffect(() => {
+    getPosts()
+      .then((data) => {
+        setAllPosts(data);
+        console.log("async data", allPosts);
+      })
+      .catch((error) => {
+        console.error("Error fetching blog posts:", error);
+      });
+  }, []);
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -28,7 +47,10 @@ export default async function BlogListing({ searchParams }: { searchParams: { pa
         {currentPosts.map((post) => (
           <div key={post.id} className="bg-white p-6 rounded-lg shadow-md">
             <h2 className="text-xl font-semibold mb-2">
-              <Link href={`/blogs/${post.id}`} className="text-blue-600 hover:underline">
+              <Link
+                href={`/blogs/${post.id}`}
+                className="text-blue-600 hover:underline"
+              >
                 {post.title}
               </Link>
             </h2>
@@ -37,7 +59,11 @@ export default async function BlogListing({ searchParams }: { searchParams: { pa
           </div>
         ))}
       </div>
-      <Pagination currentPage={currentPage} totalPages={totalPages} pageType={'blogs'} />
+      <Pagination
+        currentPage={currentPage}
+        totalPages={totalPages}
+        pageType={"blogs"}
+      />
     </div>
-  )
+  );
 }
